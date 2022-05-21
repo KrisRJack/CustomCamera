@@ -72,6 +72,10 @@ extension CameraCoordinator: CameraNavigationDelegate {
         coordinatorDelegate?.didFinish(from: self)
     }
     
+    func dismiss(from viewController: PHPickerViewController) {
+        viewController.dismiss(animated: true)
+    }
+    
     func showImagePreview(from viewController: CameraViewController, imageData: Data) {
         let imagePreviewController = ImagePreviewViewController(imageData: imageData)
         imagePreviewController.modalTransitionStyle = .crossDissolve

@@ -11,6 +11,7 @@ import PhotosUI
 
 protocol CameraNavigationDelegate {
     func dismiss(from viewController: CameraViewController)
+    func dismiss(from viewController: PHPickerViewController)
     func showPermissionMessage(from viewController: CameraViewController)
     func showImagePreview(from viewController: CameraViewController, imageData: Data)
     func presentError(from viewController: CameraViewController, withMessage message: String)
@@ -351,7 +352,7 @@ extension CameraViewController: ImagePreviewDelegate {
 extension CameraViewController: PHPickerViewControllerDelegate {
     
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
-        self.navigationDelegate?.dismiss(from: self)
+        self.navigationDelegate?.dismiss(from: picker)
         self.viewModel.picker(picker, didFinishPicking: results)
     }
     
