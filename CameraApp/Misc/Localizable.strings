@@ -1,0 +1,73 @@
+/* 
+  Localizable.strings
+  CameraApp
+
+  Created by Kristopher Jackson on 5/21/22.
+  
+*/
+
+/*********************
+
+ - Headers
+
+ *********************/
+
+"CAMERA_DISABLED_HEADER" = "Camera Disabled";
+
+
+/*********************
+
+ - Error
+
+ *********************/
+
+"DEVELOPER_ERROR" = "We are unable to process your request due to a development error. Please contact our support team.";
+
+
+/*********************
+
+ - Buttons
+
+ *********************/
+
+"DONE" = "Done";
+
+"GO_TO_SETTING_BUTTON" = "Go to Settings";
+
+"CONTINUE_BUTTON" = "Continue";
+
+"DISMISS_BUTTON" = "Dismiss";
+
+
+/*********************
+ 
+ - Alert Title
+ 
+ *********************/
+
+"GENERIC_ALERT_TITLE" = "Something Went Wrong!";
+
+"MAX_IMAGE_ALERT_TITLE" = "Max Images Reached";
+
+"IMAGE_ERROR_ALERT_TITLE" = "There was an error loading your images.";
+
+
+/*********************
+ 
+ - Alert Message
+ 
+ *********************/
+
+"IMAGE_ERROR_ALERT_MESSAGE" = "There was an error loading one or more of your images. Please try a different image or try again later.";
+
+"MAX_IMAGE_ALERT_MESSAGE" = "You have reach the maximum number of images.";
+
+
+/*********************
+
+ - General Text
+
+ *********************/
+
+"CAMERA_DISABLED_TEXT" = "Due to your privacy settings, we are unable to access your camera.";
+
