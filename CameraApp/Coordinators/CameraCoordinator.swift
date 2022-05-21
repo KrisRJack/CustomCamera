@@ -8,10 +8,21 @@
 import UIKit
 import PhotosUI
 
+protocol CameraCoordinatorDelegate {
+    /*
+     
+     Dismisses camera
+     - If being presented as a child controller, this is where you should pop this coordinator.
+     
+     */
+    func didFinish(from coordinator: CameraCoordinator)
+}
+
 final class CameraCoordinator: NSObject, Coordinator {
     
     var childCoordinators: [Coordinator] = []
     var navigationController: UINavigationController?
+    var coordinatorDelegate: CameraCoordinatorDelegate?
     
     init(_ navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -44,6 +55,7 @@ extension CameraCoordinator: CameraNavigationDelegate {
         let settingsActionTitle = NSLocalizedString("GO_TO_SETTING_BUTTON", comment: "Button")
         let settingsAction = UIAlertAction(title: settingsActionTitle, style: .default, handler: { action in
             UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!, options: [:]) { _ in
+                // coordinatorDelegate?.didFinish(from: self)
                 self.start() // TODO: Replace with dismiss if presented as modal. Restarting guarentees that permission is requested again.
             }
          })
@@ -57,7 +69,7 @@ extension CameraCoordinator: CameraNavigationDelegate {
     }
     
     func dismiss(from viewController: CameraViewController) {
-        navigationController?.dismiss(animated: true)
+        coordinatorDelegate?.didFinish(from: self)
     }
     
     func showImagePreview(from viewController: CameraViewController, imageData: Data) {
